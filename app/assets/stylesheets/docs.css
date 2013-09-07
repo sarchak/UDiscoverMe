@@ -1,0 +1,247 @@
+
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 300;
+}
+body {
+  font-weight: 300;
+  padding-bottom: 20px;
+  font-family: 'Amaranth', sans-serif;
+}
+
+.main-header{
+    padding-top: 15px;
+    margin: 10px;
+}
+
+
+.widget {
+  width: 25%;
+  border: 1px solid #e5e5e5;
+}
+#wrapper {
+  width: 90%;
+  max-width: 1100px;
+  min-width: 800px;
+  margin: 50px auto;
+}
+
+#favorites {
+  -webkit-column-count: 4;
+  -webkit-column-gap: 10px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 4;
+  -moz-column-gap: 10px;
+  -moz-column-fill: auto;
+  column-count: 4;
+  column-gap: 15px;
+  column-fill: auto;
+}
+#community_favorites {
+  -webkit-column-count: 4;
+  -webkit-column-gap: 10px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 4;
+  -moz-column-gap: 10px;
+  -moz-column-fill: auto;
+  column-count: 4;
+  column-gap: 15px;
+  column-fill: auto;
+}
+
+.pin {
+  display: inline-block;
+  background: #FEFEFE;
+  border: 2px solid #FAFAFA;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  margin: 0 2px 15px;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+  padding: 15px;
+  padding-bottom: 5px;
+  background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+  opacity: 1;
+  
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+
+#row > img{
+  width : 40px;
+  height: 50px;
+}
+
+.pin img {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+}
+
+.pin p {
+  font: 12px/18px Amaranth, sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile-first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Header
+-------------------------------------------------- */
+
+.jumbotron {
+  font-family: 'Amaranth', sans-serif;
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  color: rgba(255,255,255,.75);
+  text-align: center;
+  background-color: #5e60b6;
+  border-radius: 0;
+}
+.jumbotron .container {
+  max-width: 800px;
+}
+.jumbotron h1,
+.jumbotron .glyphicon-ok {
+  margin-bottom: 15px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  font-family: 'Amaranth', sans-serif;
+  color: #fff;
+}
+.jumbotron .glyphicon-ok {
+  font-size: 40px;
+  line-height: 1;
+}
+.btn-outline {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 18px 24px;
+  font-size: inherit;
+  font-weight: 500;
+  color: #fff; /* redeclare to override the `.jumbotron a` */
+  background-color: transparent;
+  border-color: #fff;
+  border-color: rgba(255,255,255,.5);
+  transition: all .1s ease-in-out;
+}
+.btn-outline:hover,
+.btn-outline:active {
+  color: #563d7c;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.jumbotron:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  content: "";
+  height: 30px;
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0,0,0,.1));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0,0,0,.1));
+}
+
+.jumbotron p a,
+.jumbotron-links a {
+  font-weight: 500;
+  color: #fff;
+  transition: all .1s ease-in-out;
+}
+.jumbotron p a:hover,
+.jumbotron-links a:hover {
+  text-shadow: 0 0 10px rgba(255,255,255,.55);
+}
+
+/* Textual links */
+.jumbotron-links {
+  margin-top: 15px;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: 14px;
+}
+.jumbotron-links li {
+  display: inline;
+}
+.jumbotron-links li + li {
+  margin-left: 20px;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-size: 21px;
+  }
+  .jumbotron h1,
+  .jumbotron .glyphicon-ok {
+    font-size: 50px;
+  }
+}
+
+
+/* Gallery list
+-------------------------------------------------- */
+
+.gallery {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.gallery .col-lg-4 {
+  margin-bottom: 20px;
+}
+.gallery h2 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+
+
+/* Footer
+-------------------------------------------------- */
+
+.footer {
+  padding: 50px 30px;
+  color: #777;
+  text-align: center;
+  border-top: 1px solid #eee;
+}

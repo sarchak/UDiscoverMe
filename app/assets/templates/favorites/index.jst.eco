@@ -1,0 +1,23 @@
+
+<div class="container">
+
+          <div class="nav-collapse collapse navbar-responsive-collapse">
+            
+
+            <ul class="nav navbar-nav pull-right">
+              <form class="navbar-form pull-left" action="" id="new_search">
+              <input type="text" id="search" class="form-control col-lg-8" placeholder="Search">
+              </form>
+
+            </ul>
+          </div><!-- /.nav-collapse -->
+</div>
+
+<div id="row">
+<div id="wrapper">
+    <div id="columns">
+      <div id="favorites">
+      </div>
+    </div>
+</div>
+</div>

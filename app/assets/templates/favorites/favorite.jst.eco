@@ -1,0 +1,28 @@
+<div id="row">
+	<img class="thumbnail col-small-1" src=" <%= @favorite.get('from_user_img') %> "/>
+	<%= @favorite.get('screen_name') %>
+</div>
+
+<img src="<%= @favorite.get('media_url') %> "/>
+<strong> <%= @favorite.get('text') %></strong>
+
+<div class="modal fade" id="<%= @favorite.get("favorites_id") %>" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= @favorite.get("title") %></h4>
+        <h5 class="modal-title"> <a href=<%= @favorite.get("urls")[0] %>> <%= @favorite.get("urls")[0] %> </a> </h5>
+      </div>
+      <div class="modal-body">
+        <p><%= @favorite.get("linktext") %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<p><%= @favorite.get('temptext') %> <span class="label label-info" id="more" data-toggle="modal" href="#<%= @favorite.get("favorites_id") %>" >more</span></p>
+
