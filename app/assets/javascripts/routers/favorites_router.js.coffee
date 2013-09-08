@@ -39,16 +39,16 @@ class UDiscoverMe.Routers.Favorites extends Backbone.Router
 		@collection.fetch({reset:true, data : { "belongs_to":id, "search": $("#search").val()}}) 
 		$('#container').html(view.render().el)
 
-		cview = new UDiscoverMe.Views.CommunityFavoritesIndex(collection: @communitycollection,user : id)
-		@communitycollection.fetch({reset:true, data : { "belongs_to":id, "search": $("#search").val()}}) 
-		$('#communitycontainer').html(cview.render().el)
+		# cview = new UDiscoverMe.Views.CommunityFavoritesIndex(collection: @communitycollection,user : id)
+		# @communitycollection.fetch({reset:true, data : { "belongs_to":id, "search": $("#search").val()}}) 
+		# $('#communitycontainer').html(cview.render().el)
 
 		hview = new UDiscoverMe.Views.Header()
 		$('#pagehead').html(hview.render().el)
 		
 		tagview = new UDiscoverMe.Views.TagCloud(collection: @tags, user: 'shrikar test')
-		@tags.fetch({reset:true}) 
+		@tags.fetch({reset:true,data : { "belongs_to":id}}) 
 		$('#tagcloud').html(tagview.render().el)
-		console.log("Router : " + @tags.length)
+		console.log("Router : " + $("#search").val() + " id : " + id)
 
 

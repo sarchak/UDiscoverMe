@@ -1,6 +1,7 @@
 <div id="row">
-	<img class="thumbnail col-small-1" src=" <%= @favorite.get('from_user_img') %> "/>
-	<%= @favorite.get('screen_name') %>
+  <img class="thumbnail col-small-1" width="50px" src=" <%= @favorite.get('from_user_img') %> "/>
+  <div class="col-xs-6"><%= @favorite.get('screen_name') %></div>
+  <span class="label label-info pull-right" id="savefavorite" data-id=<%= @favorite.get("favorites_id") %>>Favorite</span>
 </div>
 
 <img src="<%= @favorite.get('media_url') %> "/>

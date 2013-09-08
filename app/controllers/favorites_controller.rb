@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
 
 
   def index
-    limit_docs = 100
+    limit_docs = 200
     belongs_to = params[:belongs_to]
     if(!params[:community].nil?)
       favorites = []
@@ -45,20 +45,26 @@ class FavoritesController < ApplicationController
     #respond_with favorites
   end
   
-  def save 
-    twitterUser = Twitter::Client.new(
-    :oauth_token => current_user.token,
-    :oauth_token_secret => current_user.secret,
-    :include_entitites => 1
-    )
-    puts "Favorite this " + params[:favoritethis]
-    result = {"status" => "success"}
-    res = twitterUser.favorite(params[:favoritethis].to_i)
-    puts res.to_json
-    respond_with do |format|
-      format.json{ render json: result}
-    end  
+  def save
+    if current_user.nil?
+      #redirect_to "/landing"
+      render 'public/500.html', :status => 401, :layout => false
+    else   
+      twitterUser = Twitter::Client.new(
+      :oauth_token => current_user.token,
+      :oauth_token_secret => current_user.secret,
+      :include_entitites => 1
+      )
+      puts "Favorite this " + params[:favoritethis]
+      result = {"status" => "success"}
+      res = twitterUser.favorite(params[:favoritethis].to_i)
+      puts res.to_json
+      respond_with do |format|
+        format.json{ render json: result}
+      end  
+    end
   end
+
   def show
   	#@favorites = Favorite.where(:belongs_to => current_user.screen_name)
     respond_with favorites

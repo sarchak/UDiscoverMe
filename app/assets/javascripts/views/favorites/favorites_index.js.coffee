@@ -16,7 +16,6 @@ class UDiscoverMe.Views.FavoritesIndex extends Backbone.View
       $('#favorites').empty()
       $(@el).html(@template())
       @collection.each(@addFavorite)
-      console.log("In Render")
       this
 
   resetPage: (id)->
@@ -34,9 +33,9 @@ class UDiscoverMe.Views.FavoritesIndex extends Backbone.View
     console.log('New Search called :' + @collection)
     event.preventDefault()
     searchterm = $("#search").val()
-    @collection.fetch({reset:true, data : {"search": $("#search").val()}}) 
+    @collection.fetch({reset:true, data : {"search": $("#search").val(), "belongs_to":id}}) 
     @collection.reset()
-    console.log("SENDING : " + searchterm)
+    console.log("SENDING : " + searchterm+ " id "+ id)
     Backbone.pubSub.trigger('view2event', { 'searchkey' : searchterm} );
     $("#new_search")[0].reset()
 

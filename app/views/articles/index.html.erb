@@ -1,0 +1,37 @@
+<div class="main-header">
+  <div class="header">
+  <ul class="nav nav-pills pull-right">
+
+  <% if current_user %>
+    <li> <%= link_to "Sign out", signout_path %> </li>
+  <% else %>     
+    <li><%= link_to "Sign in with Twitter", "/landing" %> </li>
+  <% end %>
+  </ul>
+
+  <div id = "pagehead">
+    
+  </div>
+    
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="#udiscoverme Find my social identity and discover content from me at http://www.udiscover.me" data-size="large" class="pull-right">Tweet</a>
+</div>
+
+
+
+</div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+<div id = "tagcloud">
+  
+</div>
+<div id="container">
+  
+</div>
+
+<div id="communitycontainer">
+  
+</div>
+
+

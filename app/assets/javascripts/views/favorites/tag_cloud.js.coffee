@@ -23,10 +23,14 @@
           console.log(@collection)
 
       render: ->
-          tags = ["Hello", "world", "normally", "you", "want", "more", "words", "than", "this"].map (d) ->
-                    text: d
-                    size: 10 + Math.random() * 90
-          console.log(tags)                    
+          # tags = ["Hello", "world", "normally", "you", "want", "more", "words", "than", "this"].map (d) ->
+          #           text: d
+          #           size: 10 + Math.random() * 90
+          tags = new Array()
+          for object in this.collection.models
+            tags.push({"text":object.get("text"),"size":object.get("size") * Math.random()+15})
+          console.log(tags)    
+
           this.chart = d3.layout.cloud().size([300, 300]).words(tags).padding(5).rotate(->
                 ~~(Math.random() * 2) * 90
               ).font("Impact").fontSize((d) ->
@@ -37,4 +41,4 @@
           this
       
       singleTag:(tag) ->
-          console.log("SingleTag :" + tag.get("text"))
+          console.log("SingleTag :" + tag.get("size"))
