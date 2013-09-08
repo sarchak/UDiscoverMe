@@ -2,19 +2,16 @@
       id = 0
       fill = d3.scale.category20() 
       draw = (words) ->
-              d3.select("#tagcloud").append("svg").attr("width", 300).attr("height", 300).append("g").attr("transform", "translate(150,150)").selectAll("text").data(words).enter().append("text").style("font-size", (d) ->
+              d3.select("#tagcloud").append("svg").attr("width", 600).attr("height", 400).append("g").attr("transform", "translate(250,150)").selectAll("text").data(words).enter().append("text").style("font-size", (d) ->
                 d.size + "px"
               ).style("font-family", "Impact").style("fill", (d, i) ->
                 fill i
               ).attr("text-anchor", "middle").attr("transform", (d) ->
-                "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")"
+                "translate(" + [d.x+1, d.y] + ")rotate(" + d.rotate + ")"
               ).text (d) ->
                 d.text
          
-      defaults: {
-        w: 1,
-        h: 5,
-      }
+
       initialize:->
           _.bindAll(this,"render");
           @collection.bind("reset",this.render);
@@ -26,13 +23,15 @@
           # tags = ["Hello", "world", "normally", "you", "want", "more", "words", "than", "this"].map (d) ->
           #           text: d
           #           size: 10 + Math.random() * 90
+          d3.select("svg").remove()
           tags = new Array()
+          d3.select("#tagcloud")
           for object in this.collection.models
-            tags.push({"text":object.get("text"),"size":object.get("size") * Math.random()+15})
+            tags.push({"text":object.get("text"),"size":object.get("size") / 3 +  Math.random()*5})
           console.log(tags)    
 
-          this.chart = d3.layout.cloud().size([300, 300]).words(tags).padding(5).rotate(->
-                ~~(Math.random() * 2) * 90
+          this.chart = d3.layout.cloud().size([600, 400]).words(tags).padding(1).rotate(->
+                ~~(Math.random() * 1) * 90
               ).font("Impact").fontSize((d) ->
                 d.size
               ).on("end", draw).start()
